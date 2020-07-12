@@ -4,6 +4,8 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type=""></script>
     <style>
         * {
             box-sizing: border-box;
@@ -224,17 +226,19 @@
         <form>
             <h1>Calculator</h1>
             <div inline style="width: 200px; position: relative; margin: auto; ">
-                <input style="margin-bottom: 5px; " type="text " placeholder="Number 1 " id="num1 " onkeyup="validate1(str(num1))">
-                <input type=" text " id="num2 " placeholder="Number 2 " onkeyup="validate1( str(num2) ) ">
-
-                <div style="font-size: 18px;margin-top:10px; ">
-                    <button onclick="addition(); ">+</button>
-                    <button onclick="subtraction(); ">-</button>
-                    <button onclick="multiplication(); ">x</button>
-                    <button onclick="division(); ">/</button>
-                </div>
-                <label type="text " id="res " style="margin-bottom: 5px;margin-top: 5px; ">Answer</label>
+                <input style="margin-bottom: 5px; " type="text " placeholder="Number 1 " id="num1 " onkeyup="validate1();required ">
+                <i class="fa fa-exclamation-circle " id="t1 " aria-hidden=" true " style="color:white;"></i>
+                <input type=" text " id="num2 " placeholder="Number 2 " onkeyup="validate2();required ">
+                <i class="fa fa-exclamation-circle " id="t2 " aria-hidden="true " style="color:white;"></i>
             </div>
+            <div style="font-size: 18px;margin-top:10px; ">
+                <button onclick="addition(); ">+</button>
+                <button onclick="subtraction(); ">-</button>
+                <button onclick="multiplication(); ">x</button>
+                <button onclick="division(); ">/</button>
+            </div>
+            <label type="text " id="res " style="margin-bottom: 5px;margin-top: 5px; ">Answer</label>
+
         </form>
     </div>
     <hr>
@@ -276,7 +280,7 @@
             var a = document.getElementById("num1 ").value;
             var b = document.getElementById("num2 ").value;
             var y = document.getElementById("res ");
-            reg = /[0-9]+$/;
+            var reg = /^[0-9]+$/;
             if (reg.test(a) && reg.test(b)) {
                 a = parseInt(a);
                 b = parseInt(b);
@@ -289,7 +293,7 @@
         function subtraction() {
             var a = document.getElementById("num1 ").value;
             var b = document.getElementById("num2 ").value;
-            reg = /[0-9]+$/;
+            var reg = /^[0-9]+$/;
 
             if (reg.test(a) && reg.test(b)) {
                 a = parseInt(a);
@@ -303,7 +307,7 @@
         function multiplication() {
             var a = document.getElementById("num1 ").value;
             var b = document.getElementById("num2 ").value;
-            reg = /[0-9]+$/;
+            var reg = /^[0-9]+$/;
             if (reg.test(a) && reg.test(b)) {
                 a = parseInt(a);
                 b = parseInt(b);
@@ -316,7 +320,7 @@
         function division() {
             var a = document.getElementById("num1 ").value;
             var b = document.getElementById("num2 ").value;
-            reg = /[0-9]+$/;
+            var reg = /^[0-9]+$/;
             if (reg.test(a) && reg.test(b)) {
                 a = parseInt(a);
                 b = parseInt(b);
@@ -337,11 +341,29 @@
             }
         }
 
-        function validate1(s1) {
-            var reg = /[0-9]+$/;
-            var n1 = document.getElementById(s1).value;
-            if (reg.test(n1) == true) {} else {
+        function validate1() {
+            var reg = /^[0-9]+$/;
+            var n1 = document.getElementById("num1 ");
+            var icon = document.getElementById("t1 ");
+            if (reg.test(n1.value) == true) {
+                n1.style.border = "2px solid green";
+                icon.style.color = "white";
+            } else {
+                n1.style.border = "2px solid red";
+                icon.style.color = "red";
+            }
+        }
 
+        function validate2() {
+            var reg = /^[0-9]+$/;
+            var n2 = document.getElementById("num2 ");
+            var icon = document.getElementById("t2 ");
+            if (reg.test(n2.value) == true) {
+                n2.style.border = "2px solid green";
+                icon.style.color = "white";
+            } else {
+                n2.style.border = "2px solid red";
+                icon.style.color = "red";
             }
         }
     </script>
