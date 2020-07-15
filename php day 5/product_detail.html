@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    <form action="product_detail.php" method="post">
+        <table>
+            <h1>Inserting:</h1>
+            <tr>
+                <td>Enter Product Id</td>
+                <td><input type="number" name="productid"></td>
+            </tr>
+            <tr>
+                <td>Enter Product Name</td>
+                <td><input type="text" name="productname"></td>
+            </tr>
+            <tr>
+                <td>Enter Product Price</td>
+                <td><input type="text" name="productprice">
+                </td>
+            </tr>
+            <tr>
+                <td>Enter Product Description</td>
+                <td><input type="text" name="productdescription"></td>
+            </tr>
+            <tr>
+                <td colspan="2" style="text-align: center;"><button>INSERT</button></td>
+            </tr>
+        </table>
+    </form>
+    <h1>Deleting</h1>
+    <form action="product_detail_del.php" method="post">
+        <table>
+            <tr>
+                <td>Product ID</td>
+                <td>
+                    <input type="number" name="productid1">
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" style="text-align: center;">
+                    <button>DELETE</button>
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>
+
+</html>
