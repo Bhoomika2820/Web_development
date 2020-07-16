@@ -1,0 +1,98 @@
+{% extends 'my_portfolio_website_app/base.html' %} {% load static %} {% block stylesheets %}
+<style>
+    .img-container img {
+        border-radius: 50%;
+        margin-bottom: 2rem;
+        width: 200px;
+    }
+    
+    .img-container {
+        margin-top: 2rem;
+    }
+    
+    .personal {
+        padding: 3rem;
+    }
+    
+    .detail {
+        padding: 3rem;
+    }
+    
+    .detail i {
+        margin-right: 1rem;
+        color: #117366;
+    }
+    
+    b {
+        padding-right: 10px;
+    }
+    
+    .card {
+        margin-top: 6rem;
+    }
+    
+    ul {
+        position: relative;
+        right: 0;
+    }
+    
+    .useful_link a {
+        color: #117366;
+        margin: 1rem;
+    }
+    
+    .useful_link a:hover {
+        color: #000;
+    }
+    
+    .profile_name h1,
+    h5 {
+        margin: 1rem;
+    }
+</style>
+{% endblock stylesheets %} {% block headscript %} {% endblock headscript %} {% block content %}
+
+
+<div class="container">
+    <div class="col-sm-12">
+        <div class="card shadow-lg p-3 mb-5 bg-white rounded">
+            <div class="row ">
+                <div class="img-container mx-auto">
+                    <img src="{% static 'my_portfolio_website_app/images/profile1.png' %}">
+                </div>
+
+            </div>
+            <div class="row align-self-center">
+                <div class="profile_name text-center">
+                    <h1>Bhoomika Mewada</h1>
+                    <h5>I'm python developer</h5>
+                    <div class="useful_link ml-auto">
+                        <center>
+                            <a href="https://github.com/Bhoomika2820"><span class="fab fa-github fa-2x"></span></a>
+                            <a href="https://in.linkedin.com/in/bhoomika-mewada-97992a143"><span class="fab fa-linkedin fa-2x"></span></a>
+                        </center>
+                    </div>
+                </div>
+            </div>
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-6 personal">
+                        <h3 style="font-weight: bold">Personal Detail</h3>
+                        <p>Hi, I’m Bhoomika Mewada explorer on this planet. I like to explore different libraries in python and expand my knowledge.I like to solve problems and perfectionise the solutions to them.I am currently working as a python developer
+                            in cloud councellage and junior data scientist in Kubix Square. Build mini projects in python and explored different libraries.Have a good knowledge in python,c,autocad,html,css and java.Meet me or Contact me for any queries.
+                        </p>
+                    </div>
+                    <div class="col-md-6 detail">
+                        <p><i class="far fa-user-circle"></i><b>Name:</b> Bhoomika Mewada</p>
+                        <p><i class="fas fa-phone"></i><b>Phone:</b> ##########</p>
+                        <p><i class="fas fa-envelope"></i><b>Email:</b> bhoomikamewada@gmail.com</p>
+                        <p><i class="far fa-calendar-alt"></i><b>Date Of Birth:</b> 28-02-2000</p>
+                        <p><i class="fas fa-map-marker-alt"></i><b>Address:</b> Mira Road</p>
+                        <p><i class="fas fa-code"></i><b>Language:</b> Python, C, JAVA, HTML, css,JavaScript</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %} {% block script %} {% endblock %}
